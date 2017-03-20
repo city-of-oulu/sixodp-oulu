@@ -7661,6 +7661,7 @@ h3, h4, h5, h6, .module-heading {
     display: none; }
 
 .page-heading-container {
+  padding: 0 10px;
   min-height: 96px; }
   .page-heading-container .heading-icon {
     display: inline-block;

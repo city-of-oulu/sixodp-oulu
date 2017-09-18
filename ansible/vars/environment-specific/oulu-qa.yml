@@ -2,6 +2,9 @@
 
 public_facing_hostname: oulu-qa.dataportaali.com
 internal_hostname: sixodp-{{ deployment_environment_id }}
+cms_site_url: localhost
+ckan_internal_host: 127.0.0.1:8080
+ckan_internal_url: "{{ 'http://' + ckan_internal_host }}"
 ckan_site_name: Dataportaali
 ckan_featured_orgs:
 automatic_updates: false
@@ -37,11 +40,22 @@ nginx:
 acmetool_hostnames:
   - "{{ public_facing_hostname }}"
 
-wordpress_database_host: sixodp-{{ deployment_environment_id }}-wordpress.{{ rds_domain_common_part }}
-wordpress_database_admin_user: ckan_admin
-wordpress_database_admin_password: "{{ secret.database_ckan_admin_password }}"
-wordpress_database_password: "{{ secret.wordpress_database_password }}"
-wordpress_admin_password: "{{ secret.wordpress_admin_password }}"
+mysql:
+  server:
+    installed_locally: false
+    host: sixodp-{{ deployment_environment_id }}-wordpress.{{ rds_domain_common_part }}
+    admin_user: ckan_admin
+    admin_password: "{{ secret.database_wordpress_root_password }}"
+    trusted_ip_range: 127.0.0.1/32
+  users:
+    wordpress:
+      username: wordpress
+      password: "{{ secret.database_wordpress_password }}"
+  databases:
+    wordpress:
+      name: wordpress
+      owner: wordpress
+
 
 solr:
   host: 127.0.0.1
@@ -65,6 +79,12 @@ ckan_users:
     username: test
     password: "{{ secret.ckan_test_password }}"
     email: testuser@localhost
+
+wordpress_users:
+  admin:
+    username: admin
+    password: "{{ secret.wordpress_admin_password }}"
+    email: admin@localhost.localdomain
 
 ckan_admins:
   - "{{ ckan_users.admin.username }}"

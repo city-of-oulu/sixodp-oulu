@@ -94,7 +94,8 @@
       "form_placeholder": "joe@example.com",
       "display_property": "dc:contributor",
       "display_snippet": "email.html",
-      "display_email_name_field": "maintainer"
+      "display_email_name_field": "maintainer",
+      "required": true
     },
     {
       "field_name": "maintainer_website",
@@ -122,7 +123,6 @@
       "field_name": "date_updated",
       "label": "Updated",
       "preset": "date",
-      "required": true,
       "description": "The date which will be shown as the last modified date for this dataset."
     },
     {

@@ -49,7 +49,7 @@ $brand-background: #ffffff;
 $brand-secondary-background: #f8f8f8;
 
 $text-color: $gray-base;
-$headings-color: $brand-secondary;
+$headings-color: $brand-primary;
 $headings-small-color: $brand-primary;
 $headings-secondary-color: $brand-primary;
 $headings-extra-color: $brand-gray;
@@ -63,6 +63,8 @@ $stats-text-color: $brand-white;
 
 $accordion-bg: $brand-gray;
 $accordion-tab-bg: $brand-gray;
+$accordion-tab-overlay-bg: $brand-gray;
+
 $accordion-tab-border-color: $brand-white;
 $accordion-tab-text-color: $brand-white;
 $accordion-tab-heading-color: $brand-white;
@@ -79,9 +81,10 @@ $showcase-card-text-color: $brand-white;
 
 $dataset-card-bg: $brand-white;
 $dataset-card-border-color: $brand-lightgray;
-$dataset-card-heading-color: $brand-secondary;
+$dataset-card-heading-color: $brand-primary;
 $dataset-card-text-color: $text-color;
-$dataset-card-link-color: $brand-secondary;
+$dataset-card-link-color: $brand-success;
+
 
 $latest-bg: $brand-warning;
 $latest-card-heading-bar-bg: $brand-secondary;

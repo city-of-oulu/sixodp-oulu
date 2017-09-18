@@ -181,7 +181,7 @@ AWS:
   ckan_s3_bucket: sixodp-{{ deployment_environment_id }}-datasets
   region: S3_EU_WEST
 
-#recaptcha_sitekey: 6Ld7sy8UAAAAAFJgL1kRL1DO51XkJOGLM_25nLzm
+recaptcha_sitekey: 6LdYFzEUAAAAABZac5pEutQ5nyO3W88SPiGNtdve
 
 #google_analytics:
 #  id: UA-98421659-2

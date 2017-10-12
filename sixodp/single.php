@@ -20,7 +20,7 @@ get_header(); ?>
     ?>
 
     <div class="page__hero"></div>
-    <div class="page__content container">
+    <div class="page__content page__hero__content container">
       <?php
       // Start the loop.
       while ( have_posts() ) : the_post();
@@ -29,53 +29,95 @@ get_header(); ?>
 
         ?>
         <div class="row">
-          <div class="col-md-4 sidebar">
-            <div class="sidebar__wrapper">
-              <ul class="sidebar__list--heading">
-                <?php
-                foreach (get_the_category() as $cat):
+          <div class="col-md-3 sidebar">
+            <?php 
+            $post_type = get_post_type_object(get_post_type());
+            if ($post_type->name !== 'post' && $post_type->name !== 'page') :
+            ?>
+              <ul>
+                <li class="sidebar__item--heading"><a href="<?php echo get_post_type_archive_link($post_type->name); ?>"><i class="material-icons">bookmark</i> 
+                  <?php
+                  if ($post_type->name === 'data_request') _e('Data Request');
+                  if ($post_type->name === 'showcase_idea') _e('Showcase Idea');
+                  else echo $post_type->labels->singular_name; 
                   ?>
-                  <li class="sidebar__item--heading">
-                    <a href="<?php echo get_category_link($cat); ?>" class="sidebar__link--block">
+                </a></li>
+              </ul>
+            <?php 
+            endif; 
+            ?>
+
+            <ul>
+              <li class="sidebar__item--heading"><i class="material-icons">bookmark</i> <?php _e('Categories') ?></li>
+              <?php
+              foreach (get_the_category() as $cat):
+                ?>
+                <li class="sidebar__item">
+                  <a href="<?php echo get_category_link($cat); ?>">
+                    <i class="material-icons">settings</i>
+                    <?php echo $cat->cat_name; ?>
+                  </a>
+                </li>
+                <?php 
+              endforeach;
+              ?>
+            </ul>
+
+            <?php
+            $tags = get_the_tags();
+            if ($tags) :
+            ?>
+              <ul>
+                <li class="sidebar__item--heading"><i class="material-icons">label</i> <?php _e('Tags') ?></li>
+                <?php
+                foreach ($tags as $tag):
+                  ?>
+                  <li class="sidebar__item">
+                    <a href="<?php echo get_tag_link($tag); ?>">
                       <i class="material-icons">settings</i>
-                      <?php echo $cat->cat_name; ?>
-                      <span class="sidebar__icon-wrapper">
-                        <i class="material-icons">arrow_forward</i>
-                      </span>
+                      <?php echo $tag->name; ?>
                     </a>
                   </li>
                   <?php 
                 endforeach;
                 ?>
-                <?php 
-                $author = get_the_author();
+              </ul>
+            <?php endif; ?>
 
-                if (get_the_author() !== 'admin') {
-                  ?>
-                  <li class="sidebar__item--heading">
-                    <?php the_author(); ?>
-                  </li>
-                  <?php
-                }
-                ?>
-                <li class="sidebar__item--heading">
-                  <?php the_date(); ?>
+            <?php 
+            $author = get_the_author();
+
+            if (get_the_author() !== 'admin') : ?>
+              <ul>
+                <li class="sidebar__item">
+                  <img src="<?php echo get_avatar_url(get_the_author_meta('id'), ['size' => 128]) ?>" class="avatar" />
+                  <p><strong><?php the_author(); ?></strong></p>
+                  <p><?php echo get_the_author_meta('description'); ?></p>
+                </li>
+                <li class="sidebar__item">
                 </li>
               </ul>
-              
-              <div class="addthis_toolbox">
-                <a class="addthis_button_facebook_like at300b"></a>
-                <a class="addthis_button_tweet at300b"></a>
-              </div>
-            </div>        
+            <?php endif; ?>
+            <ul>
+              <li class="sidebar__item">
+                <i class="material-icons">event</i> <?php the_date(); ?>
+              </li>
+            </ul>
           </div>
-          <div class="col-md-8 news-content">
+          <div class="col-md-9 news-content">
             <h1 class="heading--main"><?php the_title() ?></h1>
             <article class="article"><?php the_content() ?></article>
+
+            <div class="addthis_toolbox">
+              <a class="addthis_button_facebook_like at300b"></a>
+              <a class="addthis_button_tweet at300b"></a>
+            </div>
+            
             <?php
 
             // If comments are open or we have at least one comment, load up the comment template.
             if ( comments_open() || get_comments_number() ) :
+              echo '<a name="comments"></a>';
               comments_template();
             endif;
             ?>

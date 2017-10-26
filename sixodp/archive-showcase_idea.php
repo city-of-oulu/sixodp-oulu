@@ -19,19 +19,34 @@ get_header(); ?>
       get_template_part('partials/header-logos');
     ?>
 
-    <div class="page__hero"></div>
-    <div class="page__content container">
-      <h1 class="heading--archive"><?php _e('Showcase ideas') ?></h1>
-      <a href="<?php echo get_permalink(get_translated_page_by_title('Uusi sovellusidea')); ?>" class="btn btn-small btn-secondary"><?php _e('New showcase idea') ?> &raquo;</a>
-      <?php
-      // Start the loop.
-      while ( have_posts() ) : the_post();
-        // Include the page content template.
-        get_template_part('partials/archive-item');
+    <div class="page-hero"></div>
+    <div class="page-content page-hero-content container">
+      <div class="row">
+        <div class="col-md-3 sidebar">
+          <ul>
+            <li class="sidebar-item--highlight">
+              <a href="<?php echo get_permalink(get_translated_page_by_title('Uusi sovellusidea')); ?>">
+                <?php _e('New showcase idea', 'sixodp') ?>
+                <span class="sidebar-icon-wrapper">
+                  <span class="fa fa-chevron-right"></span>
+                </span>
+              </a>
+            </li>
+          </ul>
+        </div>
+        <div class="col-md-9">
+          <h1 class="heading--archive"><?php _e('Showcase ideas', 'sixodp') ?></h1>
+          <?php
+          // Start the loop.
+          while ( have_posts() ) : the_post();
+            // Include the page content template.
+            get_template_part('partials/archive-item');
 
-        // End of the loop.
-      endwhile;
-      ?>
+            // End of the loop.
+          endwhile;
+          ?>
+        </div>
+      </div>
     </div>
 
   </main><!-- .site-main -->

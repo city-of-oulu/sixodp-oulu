@@ -19,14 +19,14 @@ get_header(); ?>
       get_template_part('partials/header-logos');
     ?>
 
-    <div class="page__hero"></div>
-    <div class="page__content page__hero__content container">
+    <div class="page-hero"></div>
+    <div class="page-content page-hero-content container">
       <div class="row">
         <div class="col-md-3 sidebar">
           <ul>
             <li class="sidebar-item--highlight">
               <a href="<?php echo get_permalink(get_translated_page_by_title('Uusi datatoive')); ?>">
-                <?php _e('New data request') ?>
+                <?php _e('New data request', 'sixodp') ?>
                 <span class="sidebar-icon-wrapper">
                   <span class="fa fa-chevron-right"></span>
                 </span>
@@ -36,7 +36,7 @@ get_header(); ?>
         </div>
 
         <div class="col-md-9">
-          <h1 class="heading--archive"><?php _e('Data Requests') ?></h1>
+          <h1 class="heading--archive"><?php _e('Data Requests', 'sixodp') ?></h1>
           <?php
           // Start the loop.
           while ( have_posts() ) : the_post();

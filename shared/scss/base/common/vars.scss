@@ -1,7 +1,7 @@
 // Base
 $base: 10px;
-$content-padding-top: $base*8;
-$content-padding-top-desktop: $base*12;
+$content-padding-top: $base*15;
+$content-padding-top-desktop: $base*18;
 
 // Borders
 $border-radius-base: 6px;
@@ -214,11 +214,14 @@ $sidebar-item-color--highlight: $brand-white;
 $sidebar-item-color-active: $text-color;
 $sidebar-item-color-active--highlight: $brand-white;
 
+// Breadcrumb
+$breadcrumb-bg: transparent;
+$breadcrumb-color: $link-color;
+$breadcrumb-separator: ">";
+
 // Misc component colors
 $badge-background-color: $brand-primary;
 $badge-background-color-active: $brand-primary;
-$breadcrumb-link-color: $brand-gray;
-$breadcrumb-link-separator-color: $brand-primary;
 $image-slider-background-color: $navbar-background-color;
 $label-text-color: $brand-success;
 $label-background-color: $navbar-background-color;

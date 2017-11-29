@@ -1,14 +1,10 @@
 .logos {
-  margin-top: 0;
-  top: $content-padding-top - $navbar-height;
+  margin-top: $content-padding-top;
   padding: 0 $base;
-  position: relative;
-  height: 0;
   z-index: 1;
 
   @media(min-width: $grid-float-breakpoint) {
-    margin-top: 0;
-    top: $content-padding-top-desktop - $navbar-height;
+    margin-top: $content-padding-top-desktop;
   }
 
   &:after {

@@ -11,12 +11,9 @@ get_header(); ?>
 <div id="primary" class="content-area">
   <main id="main" class="site-main wrapper" role="main">
 
-    <?php
-    get_template_part('partials/header-logos');
-    ?>
+    <?php get_template_part('partials/page-hero'); ?>
 
-    <div class="page-hero"></div>
-    <div class="page-hero-content container">
+    <div class="page-content container">
 
       <div class="headingbar">
         <h1 class="heading-main">
@@ -39,7 +36,7 @@ get_header(); ?>
           <ul>
             <li class="sidebar-item--highlight">
               <span class="sidebar-item-inner">
-                <i class="material-icons">label</i> <?php _e('Popular tags') ?>
+                <i class="material-icons">label</i> <?php _e('Popular tags', 'sixodp') ?>
               </span>
             </li>
             <?php
@@ -59,15 +56,20 @@ get_header(); ?>
           </ul>
         </div>
 
-        <div class="col-md-9 col-sm-7 col-xs-12 news-content">
-          <div class="cards cards--2 cards--image">
+        <div class="col-md-9 col-sm-12 col-xs-12 news-content">
+          <div class="cards cards--3">
             <?php
             // Start the loop.
             while ( have_posts() ) : the_post();
-              // Include the page content template.
-              get_template_part('partials/archive-item');
-
-              // End of the loop.
+              $item = array(
+                'image_url' => get_post_thumbnail_url($post),
+                'title' => $post->post_title,
+                'show_rating' => false,
+                'date_updated' => $post->post_date,
+                'notes' => $post->post_content,
+                'url' => get_the_permalink(),
+              );
+              include(locate_template( 'partials/card-image.php' ));
             endwhile;
             ?>
           </div>

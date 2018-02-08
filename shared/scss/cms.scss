@@ -7,7 +7,6 @@
 @import "components/common/form";
 @import "components/common/notification";
 @import "components/common/nav";
-@import "components/common/logos";
 @import "components/common/hero";
 @import "components/common/footer";
 @import "components/common/alert";
@@ -27,6 +26,10 @@
 @import "components/common/page-hero";
 @import "components/common/headingbar";
 @import "components/common/breadcrumb";
+@import "components/common/disqus";
+@import "components/common/toolbar";
+@import "components/common/card";
+@import "components/common/carousel";
 
 @import "components/cms/layout";
 @import "components/cms/icons";
@@ -42,7 +45,6 @@
 @import "components/cms/article";
 @import "components/cms/search";
 @import "components/cms/banner";
-@import "components/cms/card";
 @import "components/cms/boxlink";
 @import "components/cms/twitterfeed";
 @import "components/cms/page";
@@ -53,3 +55,5 @@
 @import "components/cms/caption";
 @import "components/cms/news";
 @import "components/cms/items";
+@import "components/cms/logos";
+@import "components/cms/pagination";

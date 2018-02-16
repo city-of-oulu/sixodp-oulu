@@ -32,9 +32,9 @@ $brand-primary-extralight: lighten($brand-primary, 15%);
 $brand-primary-extradark: darken($brand-primary, 15%);
 
 $brand-secondary: #E10069;
-$brand-secondary-light: lighten($brand-secondary, 10%);
+$brand-secondary-light: #EB82AA;
 $brand-secondary-dark: darken($brand-secondary, 10%);
-$brand-secondary-extralight: lighten($brand-secondary, 35%);
+$brand-secondary-extralight: lighten($brand-secondary, 52%);
 $brand-secondary-extradark: darken($brand-secondary, 15%);
 
 $brand-success: #2DAA37;
@@ -85,30 +85,30 @@ $headings-small-color: $brand-primary;
 $headings-secondary-color: $brand-primary;
 $headings-extra-color: $brand-gray;
 
-$brand-app: $brand-success;
+$brand-app: $brand-gray;
 $brand-app-dark: darken($brand-app, 15%);
 
-$brand-dataset: $brand-danger;
+$brand-dataset: $brand-gray;
 $brand-dataset-dark: darken($brand-dataset, 15%);
 
 // Frontpage elements
 $main-logo-width: 200px;
 $hero-main-heading-color: $brand-white;
 $hero-secondary-heading-color: $brand-white;
-$hero-overlay-start: $brand-primary;
-$hero-overlay-stop: $brand-primary-extradark;
+$hero-overlay-start: $brand-white;
+$hero-overlay-stop: $brand-secondary;
 $hero-overlay-opacity-start: 0.0;
-$hero-overlay-opacity-center: 0.6;
-$hero-overlay-opacity-end: 0.9;
+$hero-overlay-opacity-center: 0.3;
+$hero-overlay-opacity-end: 0.4;
 $btn-main-bg: $brand-secondary;
 $btn-main-color: $brand-white;
 $btn-main-active-bg: $brand-secondary-light;
 $btn-main-active-color: $brand-white;
 
-$category-box-bg: $brand-primary;
+$category-box-bg: $brand-secondary;
 $category-box-icon-color: $brand-white;
-$category-box-text-color: $brand-success-light;
-$category-box-count-color: $brand-primary-extralight;
+$category-box-text-color: $brand-secondary-light;
+$category-box-count-color: $gray-lighter;
 $stats-text-color: $brand-white;
 
 $accordion-bg: $brand-bg-alt;
@@ -150,7 +150,7 @@ $card-heading-rows: 3;
 
 $card-bg: $brand-lightgray;
 $card-bg-active: $brand-white;
-$card--image-bg: $brand-success-extralight;
+$card--image-bg: $brand-secondary-extralight;
 $card--image-bg-active: $brand-white;
 
 $card-text-color: $text-color;
@@ -161,7 +161,7 @@ $card-text-color--highlight-active: $brand-danger-light;
 $card-title-secondary-color: $text-muted;
 $card-border-radius: $border-radius-medium;
 $card-star-filled: $text-color;
-$card-star-empty: $brand-success-light;
+$card-star-empty: $gray-light;
 
 // Navigation
 $navbar-default-bg: #f8f8f8;

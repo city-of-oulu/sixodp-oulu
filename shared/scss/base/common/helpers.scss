@@ -68,9 +68,9 @@
   bottom: 0;
   left: 0;
   background: rgba($hero-overlay-start, 0.2); /* Old browsers */
-  background: -moz-linear-gradient(rgba($hero-overlay-start, $hero-overlay-opacity-start) 0%, rgba($hero-overlay-stop, $hero-overlay-opacity-center) 60%, rgba(darken($hero-overlay-stop, 15%), $hero-overlay-opacity-end) 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(rgba($hero-overlay-start, $hero-overlay-opacity-start) 0%, rgba($hero-overlay-stop, $hero-overlay-opacity-center) 60%, rgba(darken($hero-overlay-stop, 15%), $hero-overlay-opacity-end) 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(rgba($hero-overlay-start, $hero-overlay-opacity-start) 0%, rgba($hero-overlay-stop, $hero-overlay-opacity-center) 60%, rgba(darken($hero-overlay-stop, 15%), $hero-overlay-opacity-end) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: -moz-linear-gradient(80deg, rgba($hero-overlay-start, $hero-overlay-opacity-start) 0%, rgba($hero-overlay-stop, $hero-overlay-opacity-center) 50%, rgba(darken($hero-overlay-stop, 15%), $hero-overlay-opacity-end) 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(80deg, rgba($hero-overlay-start, $hero-overlay-opacity-start) 0%, rgba($hero-overlay-stop, $hero-overlay-opacity-center) 50%, rgba(darken($hero-overlay-stop, 15%), $hero-overlay-opacity-end) 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(80deg, rgba($hero-overlay-start, $hero-overlay-opacity-start) 0%, rgba($hero-overlay-stop, $hero-overlay-opacity-center) 50%, rgba(darken($hero-overlay-stop, 15%), $hero-overlay-opacity-end) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 }
 
 // Placeholder classes

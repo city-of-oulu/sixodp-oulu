@@ -13,7 +13,7 @@ body:after{
 	content: '';
 	display: block;
 	position: relative;
-	height: 250px;
+	height: 450px;
 	width: 100%;
 	background: rgba(255, 255, 255, 0.2); /* Old browsers */
 	background: -moz-linear-gradient(rgba(255, 255, 255, 0) 0, #fff 100%); /* FF3.6-15 */

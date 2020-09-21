@@ -115,6 +115,7 @@ $category-box-icon-color: $brand-white;
 $category-box-text-color: $brand-secondary-light;
 $category-box-count-color: $gray-lighter;
 $stats-text-color: $brand-white;
+$brand-categories: darken($category-box-bg, 20%);
 
 $accordion-bg: $brand-bg-alt;
 $accordion-tab-bg: $brand-bg-alt;
@@ -303,6 +304,7 @@ $media-item-background-color: $brand-background;
 $table-border-color: $border-color;
 $topic-list-background-color: $gray-lighter;
 $toolbar-default-bg: #f8f8f8;
+$toolbar-text-color: $headings-muted-color;
 
 // Breakpoints
 $width-xxs: 340px;
@@ -333,6 +335,8 @@ $font-size-h3: ceil(($font-size-base * 1.7)); // ~24px
 $font-size-h4: ceil(($font-size-base * 1.25)); // ~18px
 $font-size-h5: $font-size-base;
 $font-size-h6: ceil(($font-size-base * 0.85));
+
+$featured-font-weight: bold;
 
 $padding-large-vertical: 10px;
 $padding-large-horizontal: 10px;

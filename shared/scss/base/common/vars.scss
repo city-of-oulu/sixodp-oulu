@@ -80,7 +80,7 @@ $brand-input-color: #656D74;
 
 $text-color: $gray-base;
 $text-muted: $brand-gray;
-$headings-color: $brand-secondary;
+$headings-color: $brand-primary;
 $headings-muted-color: $brand-gray;
 $headings-small-color: $brand-primary;
 $headings-secondary-color: $brand-secondary;
@@ -99,7 +99,7 @@ $brand-latest-dark: darken($brand-latest, 15%);
 // Frontpage elements
 $main-logo-width: 200px;
 $hero-main-heading-color: $brand-white;
-$hero-secondary-heading-color: $brand-primary;
+$hero-secondary-heading-color: $brand-white;
 $hero-overlay-start: $brand-secondary;
 $hero-overlay-stop: $brand-secondary-extradark;
 $hero-overlay-opacity-start: 0.3;
@@ -241,7 +241,7 @@ $filter-bg-hover: $gray-lighter;
 $filter-hover: $text-color;
 
 // Links
-$link-color: $brand-primary;
+$link-color: $brand-secondary;
 $link-color-active: lighten($link-color, 20%);
 $link-secondary-color: $brand-success;
 $link-secondary-color-active: lighten($link-secondary-color, 20%);

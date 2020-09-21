@@ -80,10 +80,10 @@ $brand-input-color: #656D74;
 
 $text-color: $gray-base;
 $text-muted: $brand-gray;
-$headings-color: $brand-primary;
+$headings-color: $brand-secondary;
 $headings-muted-color: $brand-gray;
 $headings-small-color: $brand-primary;
-$headings-secondary-color: $brand-primary;
+$headings-secondary-color: $brand-secondary;
 $headings-extra-color: $brand-gray;
 
 $brand-app: $brand-gray;
@@ -98,10 +98,10 @@ $brand-latest-dark: darken($brand-latest, 15%);
 
 // Frontpage elements
 $main-logo-width: 200px;
-$hero-main-heading-color: $brand-primary;
+$hero-main-heading-color: $brand-white;
 $hero-secondary-heading-color: $brand-primary;
 $hero-overlay-start: $brand-secondary;
-$hero-overlay-stop: $brand-white;
+$hero-overlay-stop: $brand-secondary-extradark;
 $hero-overlay-opacity-start: 0.3;
 $hero-overlay-opacity-center: 0.4;
 $hero-overlay-opacity-end: 0.5;
@@ -230,7 +230,7 @@ $navbar-offcanvas-link-color: $brand-primary;
 $navbar-offcanvas-link-color-hover: $brand-white;
 $navbar-offcanvas-link-color-active: $brand-white;
 $navbar-offcanvas-border-color: $border-color;
-$navbar-offcanvas-heading-color: $brand-primary;
+$navbar-offcanvas-heading-color: $brand-secondary;
 
 // Filters
 $filter-bg: transparent;
@@ -278,7 +278,7 @@ $stages-text-color-active: $brand-white;
 $stages-text-color-filled: $brand-white;
 
 // Sidebar (CMS only)
-$sidebar-heading-color: $gray-light;
+$sidebar-heading-color: $brand-secondary;
 $sidebar-item-bg: $brand-white;
 $sidebar-item-bg--highlight: $gray-lighter;
 $sidebar-item-bg-active: $brand-secondary;

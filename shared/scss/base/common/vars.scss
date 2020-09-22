@@ -243,7 +243,7 @@ $filter-hover: $text-color;
 // Links
 $link-color: $brand-secondary;
 $link-color-active: lighten($link-color, 20%);
-$link-secondary-color: $brand-success;
+$link-secondary-color: $brand-secondary;
 $link-secondary-color-active: lighten($link-secondary-color, 20%);
 
 // Rating (ckan extension)

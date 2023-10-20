@@ -117,7 +117,7 @@ ckan_extensions:
   - ckanext-statistics
   #- ckanext-sixodp_harvester
   - ckanext-sixodp_showcasesubmit
-  - ckanext-googleanalytics
+  - ckanext-matomo
   - ckanext-geoview
   - ckanext-sentry
 
@@ -131,7 +131,7 @@ enabled_ckan_extensions:
   - recline_grid_view
   - recline_map_view
   - sixodp_showcase
-  - googleanalytics
+  - matomo
   - qa
   - archiver
   - collection
@@ -198,3 +198,12 @@ cookiehub_domain_code: "b2433255"
 
 sentry:
   dsn: "https://843b0b263291440c8a1a49ff0cf4decc@o4504133597855744.ingest.sentry.io/4505357365673984"
+
+
+matomo:
+  domain: "https://oukadata.matomo.cloud/"
+  script_domain: "//cdn.matomo.cloud/oukadata.matomo.cloud/"
+  site_id: "1"
+  token_auth: "{{ secret.matomo_token_auth }}"
+  start_date: 10/2017
+  show_download_graph: true

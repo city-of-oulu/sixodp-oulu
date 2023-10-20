@@ -20,3 +20,5 @@ rds_domain_common_part: cucurut9m9hh.eu-west-1.rds.amazonaws.com
 sentry:
   dsn: ""
 
+translation_projects:
+  - ckanext-matomo

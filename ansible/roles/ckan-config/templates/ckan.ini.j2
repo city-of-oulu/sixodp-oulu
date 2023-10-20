@@ -189,6 +189,27 @@ ga-report.period = monthly
 ga-report.bounce_url = /
 {% endif %}
 
+{% if matomo is defined %}
+ckanext.matomo.site_id = {{ matomo.site_id }}
+ckanext.matomo.domain = {{ matomo.domain }}
+{% if matomo.script_domain is defined %}
+ckanext.matomo.script_domain = {{ matomo.script_domain }}
+{% endif %}
+{% if matomo.api_domain is defined %}
+ckanext.matomo.api_domain = {{ matomo.api_domain }}
+{% endif %}
+{% if matomo.tracker_filename is defined %}
+ckanext.matomo.tracker_filename = {{ matomo.tracker_filename }}
+{% endif %}
+{% if matomo.script_filename is defined %}
+ckanext.matomo.script_filename = {{ matomo.script_filename }}
+{% endif %}
+ckanext.matomo.token_auth = {{ matomo.token_auth }}
+ckanext-matomo.start_date = {{ matomo.start_date }}
+ckanext-matomo.show_download_graph = {{ matomo.show_download_graph }}
+{% endif %}
+
+
 # ckanext-collection
 ckanext.collection.api_collection_name_or_id: rajapinnat
 

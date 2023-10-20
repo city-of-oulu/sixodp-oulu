@@ -27,6 +27,9 @@
 		var locale = '<?php echo get_current_locale() ?>';
 		var locale_ckan = '<?php echo get_current_locale_ckan() ?>';
 	</script>
+
+    <?php include('matomo-config.php'); ?>
+    <?php include('cookiehub-config.php'); ?>
 </head>
 
 <body <?php body_class(); ?> id="wordpress-indicator">

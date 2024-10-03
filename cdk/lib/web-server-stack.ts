@@ -42,12 +42,12 @@ export class WebServerStack extends Stack {
             'mount /opt/datacatalog/data/ckan',
             'install -d -o www-data -g www-data /mnt/wp-uploads',
             'cd /root',
-            'git clone https://github.com/6aika/sixodp.git',
-            'cd /root/sixodp',
+            'git clone https://github.com/city-of-oulu/sixodp-oulu.git',
+            'cd /root/sixodp-oulu',
             'git submodule update --init --recursive',
-            `aws s3 cp s3://sixodp-secrets/${props.environment}/secrets.yml /root/sixodp-secrets/${props.environment}/secrets.yml`,
+            `aws s3 cp s3://sixodp-oulu-secrets/${props.environment}/secrets.yml /root/sixodp-secrets/${props.environment}/secrets.yml`,
             'chmod -R go-rwx /root/sixodp-secrets/*',
-            'cd /root/sixodp/ansible',
+            'cd /root/sixodp-oulu/ansible',
             `ansible-playbook -i inventories/${props.environment} deploy-servers.yml --limit webserver`,
             'echo "Bootstrap done."'
         )

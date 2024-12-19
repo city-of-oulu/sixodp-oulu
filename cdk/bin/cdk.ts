@@ -9,6 +9,7 @@ import {LoadBalancerStack} from "../lib/load-balancer-stack";
 import {WebServerStack} from "../lib/web-server-stack";
 import {BackgroundServerStack} from "../lib/background-server-stack";
 import {FileSystemStack} from "../lib/file-system-stack";
+import {SesStack} from "../lib/ses-stack";
 
 const app = new cdk.App();
 
@@ -19,6 +20,7 @@ const stackProps = {
 
 const env = {
     environment: 'oulu',
+    domain: 'data.ouka.fi',
     fqdn: 'data.ouka.fi'
 }
 
@@ -52,6 +54,7 @@ const databaseStack = new DatabaseStack(app, 'databaseStack', {
     wpDatabaseSnapshotParameterName: parameterStack.wpDatabaseSnapshotParameterName,
     environment: env.environment,
     fqdn: env.fqdn,
+    domain: env.domain,
     vpc: vpcStack.vpc,
 })
 
@@ -66,6 +69,7 @@ const backgroundServerStack = new BackgroundServerStack(app, 'backgroundServerSt
     environment: env.environment,
     fqdn: env.fqdn,
     secretBucketName: 'sixodp-oulu-secrets',
+    domain: env.domain,
     ckanDatabase: databaseStack.ckanDatabase,
     wpDatabase: databaseStack.wpDatabase,
     ckanDatabaseCredentials: databaseStack.ckanDatabaseCredentials,
@@ -79,7 +83,8 @@ const fileSystemStack = new FileSystemStack(app, 'fileSystemStack', {
     },
     vpc: vpcStack.vpc,
     environment: env.environment,
-    fqdn: env.fqdn
+    fqdn: env.fqdn,
+    domain: env.domain
 })
 
 
@@ -92,6 +97,7 @@ const webServerStack = new WebServerStack(app, 'webServerStack', {
     environment: env.environment,
     fqdn: env.fqdn,
     secretBucketName: 'sixodp-oulu-secrets',
+    domain: env.domain,
     ckanDatabase: databaseStack.ckanDatabase,
     wpDatabase: databaseStack.wpDatabase,
     ckanDatabaseCredentials: databaseStack.ckanDatabaseCredentials,
@@ -109,11 +115,24 @@ const loadBalancerStack = new LoadBalancerStack(app, 'loadBalancerStack', {
     },
     environment: env.environment,
     fqdn: env.fqdn,
+    domain: env.domain,
     vpc: vpcStack.vpc,
     webServerAsg: webServerStack.webServerAsg,
     pgAdminEnabled: true,
     numberOfAllowedIpsInPgAdmin: 1,
     pgAdminAllowedIpPrefix: parameterStack.pgAdminAllowedPrefix
+})
+
+const sesStack = new SesStack(app, 'sesStack', {
+    env: {
+        account: stackProps.account,
+        region: stackProps.region
+    },
+    environment: env.environment,
+    fqdn: env.fqdn,
+    domain: env.domain,
+    teamsPathParameterName: parameterStack.teamsWorkflowPathParameterName,
+    teamsHostParameterName: parameterStack.teamsHostnameParameterName
 })
 
 

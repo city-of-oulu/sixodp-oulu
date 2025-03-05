@@ -108,7 +108,7 @@ export class WebServerStack extends Stack {
             },
             instanceType: aws_ec2.InstanceType.of(aws_ec2.InstanceClass.T3A, aws_ec2.InstanceSize.MEDIUM),
             machineImage: aws_ec2.MachineImage.genericLinux({
-                'eu-west-1': 'ami-082257ce7f51354df'
+                'eu-west-1': 'ami-0fe825d0b661d4950'
             }),
             minCapacity: props.minWebServerCapacity,
             maxCapacity: props.maxWebServerCapacity,
